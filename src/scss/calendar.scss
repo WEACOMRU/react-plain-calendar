@@ -1,0 +1,155 @@
+@import "~_import/scss/includes";
+
+/* Календарь
+-------------------------------------------------- */
+$content-width: 230px;
+$grid-year-size: 54px;
+$grid-month-size: 54px;
+$grid-date-size: 27px;
+
+@mixin calendar-grid($row-length, $item-size) {
+  &__item {
+    $grid-span: ($content-width - $item-size * $row-length) / ($row-length - 1);
+
+    margin: $grid-span $grid-span 0 0;
+    width: $item-size;
+    height: $item-size;
+
+    @for $i from 1 through $row-length {
+      &:nth-child(#{$i}) {
+        margin-top: 0;
+      }
+    }
+
+    &:nth-child(#{$row-length}n) {
+      margin-right: 0;
+    }
+  }
+}
+
+.calendar {
+  padding: 10px;
+  display: flex;
+  width: $content-width;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid #e5e5e5;
+  user-select: none;
+  cursor: default;
+}
+
+.calendar-range-select {
+  display: flex;
+  justify-content: center;
+  line-height: 1.25;
+
+  &__prev,
+  &__next {
+    width: 20px;
+    font-size: $font-size-m;
+    color: #222;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-main-regular;
+    }
+  }
+
+  &__caption {
+    @include link($color-link, $color-link-hover);
+
+    width: 120px;
+    font-size: $font-size-xl;
+    text-align: center;
+    background: none;
+    border: none;
+    outline: none;
+    cursor: pointer;
+  }
+}
+
+.calendar-grid {
+  display: flex;
+  flex-wrap: wrap;
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__date {
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    color: #525252;
+    background: #e5e5e5;
+    border: none;
+    outline: none;
+    cursor: pointer;
+
+    &:hover {
+      color: $color-main-regular;
+    }
+
+    &_outside {
+      opacity: .3;
+    }
+
+    &_active {
+      color: $color-main-regular;
+      background: #e5e5e5;
+    }
+  }
+
+  &_decade {
+    margin-top: $indent-m;
+  }
+
+  &_decade & {
+    @include calendar-grid(4, $grid-year-size);
+
+    &__date {
+      line-height: $grid-year-size;
+      font-size: $font-size-l;
+    }
+  }
+
+  &_year {
+    margin-top: $indent-m;
+  }
+
+  &_year & {
+    @include calendar-grid(4, $grid-month-size);
+
+    &__date {
+      line-height: $grid-month-size;
+      font-size: $font-size-m;
+    }
+  }
+
+  &_weekdays {
+    margin-bottom: 2px;
+  }
+
+  &_weekdays & {
+    @include calendar-grid(7, $grid-date-size);
+
+    &__item {
+      text-transform: uppercase;
+    }
+  }
+
+  &_month & {
+    @include calendar-grid(7, $grid-date-size);
+
+    &__date {
+      line-height: $grid-date-size;
+      font-size: $font-size-l;
+    }
+  }
+}

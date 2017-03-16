@@ -1,0 +1,22 @@
+{
+  "extends": "airbnb",
+  "rules": {
+    "arrow-parens": ["error", "as-needed"],
+    "jsx-a11y/anchor-has-content": "warn",
+    "jsx-a11y/img-has-alt": "warn",
+    "no-floating-decimal": "off",
+    "no-mixed-operators": "off",
+    "no-underscore-dangle": ["error", {
+      "allow": ["_example"],
+      "allowAfterThis": true,
+      "allowAfterSuper": true
+    }]
+  },
+  "env": {
+    "browser": true
+  },
+  "globals": {
+    "React": false,
+    "ReactDOM": false
+  }
+}

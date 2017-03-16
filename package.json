@@ -1,0 +1,53 @@
+{
+  "name": "react-plane-calendar",
+  "version": "1.0.0",
+  "description": "React Calendar Component",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WEACOMRU/react-plane-calendar.git"
+  },
+  "keywords": [
+    "react",
+    "calendar",
+    "datepicker",
+    "ui"
+  ],
+  "author": "bashkos <bashkos@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/WEACOMRU/react-plane-calendar/issues"
+  },
+  "homepage": "https://github.com/WEACOMRU/react-plane-calendar#readme",
+  "peerDependencies": {
+    "react": "^15.4.2"
+  },
+  "devDependencies": {
+    "babel-core": "^6.24.0",
+    "babel-loader": "^6.4.1",
+    "babel-plugin-object-values-to-object-keys": "^1.0.2",
+    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-preset-env": "^1.2.2",
+    "babel-preset-react": "^6.23.0",
+    "classnames": "^2.2.5",
+    "eslint": "^3.17.1",
+    "eslint-config-airbnb": "^14.1.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.10.0",
+    "lodash": "^4.17.4",
+    "node-sass": "^4.5.0",
+    "react": "^15.4.2",
+    "sass-loader": "^6.0.3",
+    "webpack": "^2.2.1"
+  },
+  "browserslist": [
+    "> 1%",
+    "last 2 versions",
+    "Firefox ESR"
+  ]
+}
