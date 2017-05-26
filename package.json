@@ -4,8 +4,8 @@
   "description": "React Calendar Component",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack"
+    "start": "webpack-dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
     "type": "git",
@@ -23,27 +23,38 @@
     "url": "https://github.com/WEACOMRU/react-plane-calendar/issues"
   },
   "homepage": "https://github.com/WEACOMRU/react-plane-calendar#readme",
-  "peerDependencies": {
-    "react": "^15.4.2"
-  },
   "devDependencies": {
     "babel-core": "^6.24.0",
-    "babel-loader": "^6.4.1",
+    "babel-eslint": "^7.2.3",
+    "babel-loader": "^7.0.0",
     "babel-plugin-object-values-to-object-keys": "^1.0.2",
     "babel-plugin-transform-object-rest-spread": "^6.23.0",
     "babel-preset-env": "^1.2.2",
     "babel-preset-react": "^6.23.0",
+    "babel-preset-stage-0": "^6.24.1",
     "classnames": "^2.2.5",
+    "css-loader": "^0.28.3",
     "eslint": "^3.17.1",
-    "eslint-config-airbnb": "^14.1.0",
+    "eslint-config-airbnb": "^15.0.1",
     "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^4.0.0",
-    "eslint-plugin-react": "^6.10.0",
+    "eslint-plugin-jsx-a11y": "^5.0.3",
+    "eslint-plugin-react": "^7.0.1",
     "lodash": "^4.17.4",
     "node-sass": "^4.5.0",
+    "postcss-loader": "^2.0.5",
     "react": "^15.4.2",
+    "react-dom": "^15.5.4",
+    "react-hot-loader": "next",
     "sass-loader": "^6.0.3",
-    "webpack": "^2.2.1"
+    "style-loader": "^0.18.1",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.4.5"
+  },
+  "dependencies": {
+    "prop-types": "^15.5.10"
+  },
+  "peerDependencies": {
+    "react": "^15.4.2"
   },
   "browserslist": [
     "> 1%",

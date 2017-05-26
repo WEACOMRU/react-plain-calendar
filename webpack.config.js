@@ -1,23 +1,82 @@
-const path = require('path');
+const { resolve } = require('path');
 const webpack = require('webpack');
+const reactHotLoader = require('react-hot-loader/babel');
+
+const docsDir = resolve(__dirname, 'docs');
 
 module.exports = {
-  context: path.resolve(__dirname, 'src'),
-  entry: 'index.js',
+  context: docsDir,
+  entry: [
+    'react-hot-loader/patch',
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/only-dev-server',
+    './index.js',
+  ],
   output: {
-    filename: 'react-plane-calendar.js',
-    path: path.resolve(__dirname, 'dist'),
+    filename: 'bundle.js',
+    path: docsDir,
+    publicPath: '/',
+  },
+  devtool: 'inline-source-map',
+  devServer: {
+    hot: true,
+    contentBase: docsDir,
+    publicPath: '/',
   },
   module: {
     rules: [{
-      test: /\.jsx?$/,
-      loader: 'babel-loader',
+      test: /\.js$/,
+      use: [{
+        loader: 'babel-loader',
+        options: {
+          presets: [
+            ['env', { modules: false }],
+            'stage-0',
+            'react',
+          ],
+          plugins: [reactHotLoader],
+          babelrc: false,
+        },
+      }],
+      exclude: /node_modules/,
+    }, {
+      test: /\.css$/,
+      use: [{
+        loader: 'style-loader',
+      }, {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          localIdentName: '[path][name]__[local]___[hash:base64:5]',
+        },
+      }, {
+        loader: 'postcss-loader',
+      }],
+      exclude: /node_modules/,
+    }, {
+      test: /\.(sass|scss)$/,
+      use: [{
+        loader: 'style-loader',
+      }, {
+        loader: 'css-loader',
+        options: {
+          modules: true,
+          localIdentName: '[path][name]__[local]___[hash:base64:5]',
+        },
+      }, {
+        loader: 'postcss-loader',
+      }, {
+        loader: 'sass-loader',
+      }],
     }],
   },
-  resolve: {
-    extensions: ['.js', '.jsx'],
-  },
   plugins: [
-    new webpack.NoErrorsPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
+    new webpack.NamedModulesPlugin(),
   ],
+  resolve: {
+    alias: {
+      GiphySelect: resolve(__dirname, 'src'),
+    },
+  },
 };
