@@ -1,7 +1,32 @@
 {
-  "presets": ["react", "env"],
+  "env": {
+    "development": {
+      "presets": [
+        ["env", { "modules": false }],
+        "stage-0",
+        "react"
+      ],
+      "plugins": ["react-hot-loader/babel"]
+    },
+    "production": {
+      "presets": ["env", "stage-0", "react"],
+      "plugins": [
+        ["css-modules-transform", {
+          "generateScopedName": "react-plane-calendar__[path][name]__[local]___[hash:base64:5]",
+          "preprocessCss": "./exportStyles.js",
+          "extensions": [".css", ".sass", ".scss"],
+          "extractCss": "./lib/styles.css"
+        }]
+      ]
+    }
+  },
   "plugins": [
-    "transform-object-rest-spread",
-    "object-values-to-object-keys"
+    ["module-resolver", {
+      "alias": {
+        "~components": "./src/components",
+        "~constants": "./src/constants",
+        "~utils": "./src/utils"
+      }
+    }]
   ]
 }

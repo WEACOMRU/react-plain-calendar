@@ -4,8 +4,13 @@
   "description": "React Calendar Component",
   "main": "index.js",
   "scripts": {
+    "build": "npm run clean && npm run build:lib",
+    "build:lib": "BABEL_ENV=production babel src -d lib --ignore test.js",
+    "clean": "rimraf lib",
+    "lint": "eslint ./",
     "start": "webpack-dev-server",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "version": "npm run build"
   },
   "repository": {
     "type": "git",
@@ -24,33 +29,36 @@
   },
   "homepage": "https://github.com/WEACOMRU/react-plane-calendar#readme",
   "devDependencies": {
+    "babel-cli": "^6.24.1",
     "babel-core": "^6.24.0",
     "babel-eslint": "^7.2.3",
     "babel-loader": "^7.0.0",
-    "babel-plugin-object-values-to-object-keys": "^1.0.2",
-    "babel-plugin-transform-object-rest-spread": "^6.23.0",
+    "babel-plugin-css-modules-transform": "^1.2.7",
+    "babel-plugin-module-resolver": "^2.7.1",
     "babel-preset-env": "^1.2.2",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
-    "classnames": "^2.2.5",
     "css-loader": "^0.28.3",
     "eslint": "^3.17.1",
     "eslint-config-airbnb": "^15.0.1",
+    "eslint-import-resolver-babel-module": "^3.0.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^5.0.3",
     "eslint-plugin-react": "^7.0.1",
-    "lodash": "^4.17.4",
     "node-sass": "^4.5.0",
     "postcss-loader": "^2.0.5",
     "react": "^15.4.2",
     "react-dom": "^15.5.4",
     "react-hot-loader": "next",
+    "react-inspector": "^2.0.0",
+    "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
     "style-loader": "^0.18.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.5"
   },
   "dependencies": {
+    "lodash.capitalize": "^4.2.1",
     "prop-types": "^15.5.10"
   },
   "peerDependencies": {

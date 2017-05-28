@@ -1,6 +1,5 @@
 const { resolve } = require('path');
 const webpack = require('webpack');
-const reactHotLoader = require('react-hot-loader/babel');
 
 const docsDir = resolve(__dirname, 'docs');
 
@@ -26,18 +25,7 @@ module.exports = {
   module: {
     rules: [{
       test: /\.js$/,
-      use: [{
-        loader: 'babel-loader',
-        options: {
-          presets: [
-            ['env', { modules: false }],
-            'stage-0',
-            'react',
-          ],
-          plugins: [reactHotLoader],
-          babelrc: false,
-        },
-      }],
+      use: ['babel-loader'],
       exclude: /node_modules/,
     }, {
       test: /\.css$/,
@@ -76,7 +64,7 @@ module.exports = {
   ],
   resolve: {
     alias: {
-      GiphySelect: resolve(__dirname, 'src'),
+      Calendar: resolve(__dirname, 'src'),
     },
   },
 };

@@ -17,5 +17,10 @@
       "allowAfterSuper": true
     }],
     "react/jsx-filename-extension": "off"
+  },
+  "settings": {
+    "import/resolver": {
+      "babel-module": {}
+    }
   }
 }
