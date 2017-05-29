@@ -12,7 +12,7 @@
       "presets": ["env", "stage-0", "react"],
       "plugins": [
         ["css-modules-transform", {
-          "generateScopedName": "react-plane-calendar__[path][name]__[local]___[hash:base64:5]",
+          "generateScopedName": "react-plain-calendar__[path][name]__[local]___[hash:base64:5]",
           "preprocessCss": "./exportStyles.js",
           "extensions": [".css", ".sass", ".scss"],
           "extractCss": "./lib/styles.css"

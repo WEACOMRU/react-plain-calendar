@@ -14,7 +14,7 @@ export default class App extends Component {
   render() {
     return (
       <div className={styles.app}>
-        <h1 className={styles.appTitle}>React Plane Calendar</h1>
+        <h1 className={styles.appTitle}>React Plain Calendar</h1>
         <Calendar
           theme={{
             calendar: `${calendarStyles.calendar} ${styles.calendar}`,

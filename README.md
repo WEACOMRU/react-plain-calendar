@@ -1,8 +1,8 @@
-# react-plane-calendar
+# react-plain-calendar
 React Calendar Component
 
 ```
-npm install --save react-plane-calendar
+npm install --save react-plain-calendar
 ```
 
 ## Todo

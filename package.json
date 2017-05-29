@@ -1,5 +1,5 @@
 {
-  "name": "react-plane-calendar",
+  "name": "react-plain-calendar",
   "version": "0.0.1",
   "description": "React Calendar Component",
   "main": "index.js",
@@ -13,7 +13,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/WEACOMRU/react-plane-calendar.git"
+    "url": "git+https://github.com/WEACOMRU/react-plain-calendar.git"
   },
   "keywords": [
     "react",
@@ -24,9 +24,9 @@
   "author": "bashkos <bashkos@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/WEACOMRU/react-plane-calendar/issues"
+    "url": "https://github.com/WEACOMRU/react-plain-calendar/issues"
   },
-  "homepage": "https://github.com/WEACOMRU/react-plane-calendar#readme",
+  "homepage": "https://github.com/WEACOMRU/react-plain-calendar#readme",
   "devDependencies": {
     "babel-cli": "^6.24.1",
     "babel-core": "^6.24.0",
