@@ -1,5 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from 'react'
+import PropTypes from 'prop-types'
 
 const Month = props => {
   const {
@@ -9,30 +9,30 @@ const Month = props => {
     date,
     activeDate,
     renderDateEntry,
-    onSelectDate,
-  } = props;
+    onSelectDate
+  } = props
 
-  const rangeMonth = date.getMonth();
-  const activeTime = activeDate.getTime();
+  const rangeMonth = date.getMonth()
+  const activeTime = activeDate.getTime()
 
-  let shift = 1 + startOfWeek - date.getDay();
+  let shift = 1 + startOfWeek - date.getDay()
   if (shift > 0) {
-    shift -= 7;
+    shift -= 7
   }
-  date.setDate(shift);
+  date.setDate(shift)
 
   const weekdayLabel = new Intl.DateTimeFormat(
-    locale, { weekday: 'short' },
-  );
-  const weekdaysLabels = [];
-  const daysGrid = [];
-  const year = date.getFullYear();
+    locale, { weekday: 'short' }
+  )
+  const weekdaysLabels = []
+  const daysGrid = []
+  const year = date.getFullYear()
 
   for (let i = 0; i < 42; i += 1) {
-    const month = date.getMonth();
-    const day = date.getDate();
-    const isOutside = date.getMonth() !== rangeMonth;
-    const isActive = date.getTime() === activeTime;
+    const month = date.getMonth()
+    const day = date.getDate()
+    const isOutside = date.getMonth() !== rangeMonth
+    const isActive = date.getTime() === activeTime
 
     daysGrid.push(
       <li
@@ -46,11 +46,11 @@ const Month = props => {
           {
             theme,
             isOutside,
-            isActive,
-          },
+            isActive
+          }
         )}
-      </li>,
-    );
+      </li>
+    )
 
     if (weekdaysLabels.length < 7) {
       weekdaysLabels.push(
@@ -59,11 +59,11 @@ const Month = props => {
           className={theme.gridItem}
         >
           {weekdayLabel.format(date)}
-        </li>,
-      );
+        </li>
+      )
     }
 
-    date.setDate(date.getDate() + 1);
+    date.setDate(date.getDate() + 1)
   }
 
   return (
@@ -75,8 +75,8 @@ const Month = props => {
         {daysGrid}
       </ul>
     </div>
-  );
-};
+  )
+}
 
 Month.propTypes = {
   theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -85,21 +85,21 @@ Month.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
   activeDate: PropTypes.instanceOf(Date).isRequired,
   renderDateEntry: PropTypes.func,
-  onSelectDate: PropTypes.func,
-};
+  onSelectDate: PropTypes.func
+}
 
 Month.defaultProps = {
   theme: {},
   renderDateEntry: (label, date, onSelect, { theme, isOutside, isActive }) => (
     <button
-      className={isOutside ? theme.gridDateOutside : // eslint-disable-line no-nested-ternary
-        isActive ? theme.gridDateActive : theme.gridDate}
+      className={isOutside ? theme.gridDateOutside // eslint-disable-line no-nested-ternary
+        : isActive ? theme.gridDateActive : theme.gridDate}
       onClick={() => onSelect(date)}
     >
       {label}
     </button>
   ),
-  onSelectDate: () => {},
-};
+  onSelectDate: () => {}
+}
 
-export default Month;
+export default Month

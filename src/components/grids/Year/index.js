@@ -1,7 +1,7 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import capitalize from 'lodash/capitalize';
-import ViewMode from '~constants/ViewMode';
+import React from 'react'
+import PropTypes from 'prop-types'
+import capitalize from 'lodash/capitalize'
+import ViewMode from '~constants/ViewMode'
 
 const Year = props => {
   const {
@@ -10,21 +10,21 @@ const Year = props => {
     date,
     activeDate,
     changeMode,
-    renderMonthEntry,
-  } = props;
+    renderMonthEntry
+  } = props
 
-  activeDate.setDate(1);
-  const activeTime = activeDate.getTime();
+  activeDate.setDate(1)
+  const activeTime = activeDate.getTime()
 
   const monthLabel = new Intl.DateTimeFormat(
-    locale, { month: 'short' },
-  );
-  const monthsGrid = [];
-  const year = date.getFullYear();
+    locale, { month: 'short' }
+  )
+  const monthsGrid = []
+  const year = date.getFullYear()
 
   for (let i = 0; i < 12; i += 1) {
-    date.setMonth(i);
-    const isActive = date.getTime() === activeTime;
+    date.setMonth(i)
+    const isActive = date.getTime() === activeTime
 
     monthsGrid.push(
       <li
@@ -37,19 +37,19 @@ const Year = props => {
           selectedDate => changeMode(ViewMode.MONTH, selectedDate),
           {
             theme,
-            isActive,
-          },
+            isActive
+          }
         )}
-      </li>,
-    );
+      </li>
+    )
   }
 
   return (
     <ul className={theme.gridYear}>
       {monthsGrid}
     </ul>
-  );
-};
+  )
+}
 
 Year.propTypes = {
   theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -57,8 +57,8 @@ Year.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
   activeDate: PropTypes.instanceOf(Date).isRequired,
   changeMode: PropTypes.func.isRequired,
-  renderMonthEntry: PropTypes.func,
-};
+  renderMonthEntry: PropTypes.func
+}
 
 Year.defaultProps = {
   theme: {},
@@ -69,7 +69,7 @@ Year.defaultProps = {
     >
       {capitalize(label)}
     </button>
-  ),
-};
+  )
+}
 
-export default Year;
+export default Year

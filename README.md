@@ -1,5 +1,8 @@
 # react-plain-calendar
-React Calendar Component
+
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+
+> React Calendar Component
 
 ```
 npm install --save react-plain-calendar

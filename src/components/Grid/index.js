@@ -1,9 +1,9 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import Decade from '~components/grids/Decade';
-import Year from '~components/grids/Year';
-import Month from '~components/grids/Month';
-import ViewMode from '~constants/ViewMode';
+import React from 'react'
+import PropTypes from 'prop-types'
+import Decade from '~components/grids/Decade'
+import Year from '~components/grids/Year'
+import Month from '~components/grids/Month'
+import ViewMode from '~constants/ViewMode'
 
 const Grid = props => {
   const {
@@ -17,8 +17,8 @@ const Grid = props => {
     renderYearEntry,
     renderMonthEntry,
     renderDateEntry,
-    onSelectDate,
-  } = props;
+    onSelectDate
+  } = props
 
   switch (viewMode) {
     case ViewMode.DECADE:
@@ -30,7 +30,7 @@ const Grid = props => {
           changeMode={changeMode}
           renderYearEntry={renderYearEntry}
         />
-      );
+      )
     case ViewMode.YEAR:
       return (
         <Year
@@ -41,7 +41,7 @@ const Grid = props => {
           changeMode={changeMode}
           renderMonthEntry={renderMonthEntry}
         />
-      );
+      )
     case ViewMode.MONTH:
       return (
         <Month
@@ -53,11 +53,11 @@ const Grid = props => {
           renderDateEntry={renderDateEntry}
           onSelectDate={onSelectDate}
         />
-      );
+      )
     default:
-      throw new Error('Unexpected value of "viewMode"');
+      throw new Error('Unexpected value of "viewMode"')
   }
-};
+}
 
 Grid.propTypes = {
   theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
@@ -70,15 +70,15 @@ Grid.propTypes = {
   renderYearEntry: PropTypes.func,
   renderMonthEntry: PropTypes.func,
   renderDateEntry: PropTypes.func,
-  onSelectDate: PropTypes.func,
-};
+  onSelectDate: PropTypes.func
+}
 
 Grid.defaultProps = {
   theme: {},
   renderYearEntry: Decade.defaultProps.renderYearEntry,
   renderMonthEntry: Year.defaultProps.renderMonthEntry,
   renderDateEntry: Month.defaultProps.renderDateEntry,
-  onSelectDate: Month.defaultProps.onSelectDate,
-};
+  onSelectDate: Month.defaultProps.onSelectDate
+}
 
-export default Grid;
+export default Grid

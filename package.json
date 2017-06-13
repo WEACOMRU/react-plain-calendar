@@ -7,8 +7,9 @@
     "build": "npm run clean && npm run build:lib",
     "build:lib": "BABEL_ENV=production babel src -d lib --ignore test.js",
     "clean": "rimraf lib",
-    "lint": "eslint ./",
+    "fix": "standard --fix",
     "start": "webpack-dev-server",
+    "test": "standard",
     "version": "npm run build"
   },
   "repository": {
@@ -38,12 +39,6 @@
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
     "css-loader": "^0.28.3",
-    "eslint": "^3.17.1",
-    "eslint-config-airbnb": "^15.0.1",
-    "eslint-import-resolver-babel-module": "^3.0.0",
-    "eslint-plugin-import": "^2.2.0",
-    "eslint-plugin-jsx-a11y": "^5.0.3",
-    "eslint-plugin-react": "^7.0.1",
     "node-sass": "^4.5.0",
     "postcss-loader": "^2.0.5",
     "react": "^15.4.2",
@@ -52,6 +47,7 @@
     "react-inspector": "^2.0.0",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
+    "standard": "^10.0.2",
     "style-loader": "^0.18.1",
     "webpack": "^2.2.1",
     "webpack-dev-server": "^2.4.5"
@@ -67,5 +63,8 @@
     "> 1%",
     "last 2 versions",
     "Firefox ESR"
-  ]
+  ],
+  "standard": {
+    "parser": "babel-eslint"
+  }
 }

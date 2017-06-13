@@ -1,7 +1,7 @@
 const ViewMode = {
   DECADE: 'DECADE',
   YEAR: 'YEAR',
-  MONTH: 'MONTH',
-};
+  MONTH: 'MONTH'
+}
 
-export default ViewMode;
+export default ViewMode
