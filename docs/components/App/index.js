@@ -10,13 +10,18 @@ const stylesCode = 'node_modules/react-plain-calendar/lib/styles.css'
 const usageCode = `import React, { Component } from 'react';
 import Calendar from 'react-plain-calendar';
 import 'react-plain-calendar/lib/styles.css';
-export default class Example extends Component {
+
+export default class AwesomeComponent extends Component {
+  onSelectDate(date) {
+    /* do something */
+  }
+
   render() {
     return (
       <div>
-        <Calendar />
+        <Calendar onSelectDate={this.onSelectDate} />
       </div>
-    );
+    )
   }
 }`
 

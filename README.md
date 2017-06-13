@@ -1,7 +1,7 @@
 # react-plain-calendar
 
-[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 [![npm version](https://badge.fury.io/js/react-plain-calendar.svg)](https://badge.fury.io/js/react-plain-calendar)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 > React Calendar Component
 
@@ -25,13 +25,18 @@ You will need [Webpack](https://webpack.js.org/) or other build system, that sup
 import React, { Component } from 'react';
 import Calendar from 'react-plain-calendar';
 import 'react-plain-calendar/lib/styles.css';
-export default class Example extends Component {
+
+export default class AwesomeComponent extends Component {
+  onSelectDate(date) {
+    /* do something */
+  }
+
   render() {
     return (
       <div>
-        <Calendar />
+        <Calendar onSelectDate={this.onSelectDate} />
       </div>
-    );
+    )
   }
 }
 ```
