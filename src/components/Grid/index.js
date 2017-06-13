@@ -60,7 +60,7 @@ const Grid = props => {
 }
 
 Grid.propTypes = {
-  theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  theme: PropTypes.object,
   viewMode: PropTypes.oneOf(Object.values(ViewMode)).isRequired,
   locale: PropTypes.string.isRequired,
   startOfWeek: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]).isRequired,

@@ -5,17 +5,21 @@ import ViewMode from '~constants/ViewMode'
 
 export default class RangeSelect extends Component {
   static propTypes = {
-    theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+    theme: PropTypes.object,
     viewMode: PropTypes.oneOf(Object.values(ViewMode)).isRequired,
     locale: PropTypes.string.isRequired,
     date: PropTypes.instanceOf(Date).isRequired,
+    prevLabel: PropTypes.string,
+    nextLabel: PropTypes.string,
     prevRange: PropTypes.func.isRequired,
     nextRange: PropTypes.func.isRequired,
     changeMode: PropTypes.func.isRequired
   }
 
   static defaultProps = {
-    theme: {}
+    theme: {},
+    prevLabel: '<',
+    nextLabel: '>'
   }
 
   _toggleMode = () => {
@@ -41,6 +45,8 @@ export default class RangeSelect extends Component {
       viewMode,
       locale,
       date,
+      prevLabel,
+      nextLabel,
       prevRange,
       nextRange
     } = this.props
@@ -72,7 +78,7 @@ export default class RangeSelect extends Component {
         <button
           className={theme.rangeSelectPrev}
           onClick={prevRange}
-        >{'<'}</button>
+        >{prevLabel}</button>
         <button
           className={theme.rangeSelectCaption}
           onClick={this._toggleMode}
@@ -80,7 +86,7 @@ export default class RangeSelect extends Component {
         <button
           className={theme.rangeSelectNext}
           onClick={nextRange}
-        >{'>'}</button>
+        >{nextLabel}</button>
       </div>
     )
   }

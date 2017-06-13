@@ -79,7 +79,7 @@ const Month = props => {
 }
 
 Month.propTypes = {
-  theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  theme: PropTypes.object,
   locale: PropTypes.string.isRequired,
   startOfWeek: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]).isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
@@ -92,7 +92,7 @@ Month.defaultProps = {
   theme: {},
   renderDateEntry: (label, date, onSelect, { theme, isOutside, isActive }) => (
     <button
-      className={isOutside ? theme.gridDateOutside // eslint-disable-line no-nested-ternary
+      className={isOutside ? theme.gridDateOutside
         : isActive ? theme.gridDateActive : theme.gridDate}
       onClick={() => onSelect(date)}
     >

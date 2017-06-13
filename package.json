@@ -45,6 +45,7 @@
     "react-dom": "^15.5.4",
     "react-hot-loader": "next",
     "react-inspector": "^2.0.0",
+    "react-syntax-highlighter": "^5.6.2",
     "rimraf": "^2.6.1",
     "sass-loader": "^6.0.3",
     "standard": "^10.0.2",

@@ -52,7 +52,7 @@ const Year = props => {
 }
 
 Year.propTypes = {
-  theme: PropTypes.object, // eslint-disable-line react/forbid-prop-types
+  theme: PropTypes.object,
   locale: PropTypes.string.isRequired,
   date: PropTypes.instanceOf(Date).isRequired,
   activeDate: PropTypes.instanceOf(Date).isRequired,
