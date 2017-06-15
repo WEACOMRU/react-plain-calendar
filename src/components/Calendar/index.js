@@ -17,10 +17,12 @@ export default class Calendar extends Component {
     locale: PropTypes.string,
     startOfWeek: PropTypes.oneOf([0, 1, 2, 3, 4, 5, 6]),
     activeDate: PropTypes.instanceOf(Date),
+    prevLabel: PropTypes.oneOf([PropTypes.string, PropTypes.element]),
+    nextLabel: PropTypes.oneOf([PropTypes.string, PropTypes.element]),
     renderYearEntry: PropTypes.func,
     renderMonthEntry: PropTypes.func,
     renderDateEntry: PropTypes.func,
-    onSelectDate: PropTypes.func
+    onDateSelect: PropTypes.func
   }
 
   static defaultProps = {
@@ -28,12 +30,14 @@ export default class Calendar extends Component {
     locale: Intl.DateTimeFormat.supportedLocalesOf(
       [window.navigator.language, 'en']
     )[0],
-    startOfWeek: 1,
+    startOfWeek: 0,
     activeDate: getMidnight(),
+    prevLabel: RangeSelect.defaultProps.prevLabel,
+    nextLabel: RangeSelect.defaultProps.nextLabel,
     renderYearEntry: Decade.defaultProps.renderYearEntry,
     renderMonthEntry: Year.defaultProps.renderMonthEntry,
     renderDateEntry: Month.defaultProps.renderDateEntry,
-    onSelectDate: Month.defaultProps.onSelectDate
+    onDateSelect: Month.defaultProps.onDateSelect
   }
 
   constructor (props) {
@@ -116,7 +120,7 @@ export default class Calendar extends Component {
       renderYearEntry,
       renderMonthEntry,
       renderDateEntry,
-      onSelectDate
+      onDateSelect
     } = this.props
     const { viewMode, date } = this.state
     const theme = this._theme
@@ -140,7 +144,7 @@ export default class Calendar extends Component {
           date={new Date(date.getTime())}
           activeDate={getMidnight(activeDate)}
           changeMode={this._changeMode}
-          onSelectDate={onSelectDate}
+          onDateSelect={onDateSelect}
           renderYearEntry={renderYearEntry}
           renderMonthEntry={renderMonthEntry}
           renderDateEntry={renderDateEntry}

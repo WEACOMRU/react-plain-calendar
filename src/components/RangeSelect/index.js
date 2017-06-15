@@ -9,8 +9,8 @@ export default class RangeSelect extends Component {
     viewMode: PropTypes.oneOf(Object.values(ViewMode)).isRequired,
     locale: PropTypes.string.isRequired,
     date: PropTypes.instanceOf(Date).isRequired,
-    prevLabel: PropTypes.string,
-    nextLabel: PropTypes.string,
+    prevLabel: PropTypes.oneOf([PropTypes.string, PropTypes.element]),
+    nextLabel: PropTypes.oneOf([PropTypes.string, PropTypes.element]),
     prevRange: PropTypes.func.isRequired,
     nextRange: PropTypes.func.isRequired,
     changeMode: PropTypes.func.isRequired
@@ -18,8 +18,8 @@ export default class RangeSelect extends Component {
 
   static defaultProps = {
     theme: {},
-    prevLabel: '<',
-    nextLabel: '>'
+    prevLabel: '〈',
+    nextLabel: '〉'
   }
 
   _toggleMode = () => {

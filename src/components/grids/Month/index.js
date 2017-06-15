@@ -9,7 +9,7 @@ const Month = props => {
     date,
     activeDate,
     renderDateEntry,
-    onSelectDate
+    onDateSelect
   } = props
 
   const rangeMonth = date.getMonth()
@@ -42,7 +42,7 @@ const Month = props => {
         {renderDateEntry(
           day,
           new Date(date.getTime()),
-          onSelectDate,
+          onDateSelect,
           {
             theme,
             isOutside,
@@ -85,7 +85,7 @@ Month.propTypes = {
   date: PropTypes.instanceOf(Date).isRequired,
   activeDate: PropTypes.instanceOf(Date).isRequired,
   renderDateEntry: PropTypes.func,
-  onSelectDate: PropTypes.func
+  onDateSelect: PropTypes.func
 }
 
 Month.defaultProps = {
@@ -99,7 +99,7 @@ Month.defaultProps = {
       {label}
     </button>
   ),
-  onSelectDate: () => {}
+  onDateSelect: () => {}
 }
 
 export default Month

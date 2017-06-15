@@ -12,7 +12,6 @@ const Code = ({ language, children }) => (
   <SyntaxHighlighter
     language={language}
     style={tomorrowNightEighties}
-    customStyle={{ lineHeight: 1.4 }}
   >{children}</SyntaxHighlighter>
 )
 

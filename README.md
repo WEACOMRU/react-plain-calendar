@@ -27,14 +27,14 @@ import Calendar from 'react-plain-calendar';
 import 'react-plain-calendar/lib/styles.css';
 
 export default class AwesomeComponent extends Component {
-  onSelectDate(date) {
+  onDateSelect(date) {
     /* do something */
   }
 
   render() {
     return (
       <div>
-        <Calendar onSelectDate={this.onSelectDate} />
+        <Calendar onDateSelect={this.onDateSelect} />
       </div>
     )
   }

@@ -17,7 +17,7 @@ const Grid = props => {
     renderYearEntry,
     renderMonthEntry,
     renderDateEntry,
-    onSelectDate
+    onDateSelect
   } = props
 
   switch (viewMode) {
@@ -51,7 +51,7 @@ const Grid = props => {
           date={date}
           activeDate={activeDate}
           renderDateEntry={renderDateEntry}
-          onSelectDate={onSelectDate}
+          onDateSelect={onDateSelect}
         />
       )
     default:
@@ -70,7 +70,7 @@ Grid.propTypes = {
   renderYearEntry: PropTypes.func,
   renderMonthEntry: PropTypes.func,
   renderDateEntry: PropTypes.func,
-  onSelectDate: PropTypes.func
+  onDateSelect: PropTypes.func
 }
 
 Grid.defaultProps = {
@@ -78,7 +78,7 @@ Grid.defaultProps = {
   renderYearEntry: Decade.defaultProps.renderYearEntry,
   renderMonthEntry: Year.defaultProps.renderMonthEntry,
   renderDateEntry: Month.defaultProps.renderDateEntry,
-  onSelectDate: Month.defaultProps.onSelectDate
+  onDateSelect: Month.defaultProps.onDateSelect
 }
 
 export default Grid
