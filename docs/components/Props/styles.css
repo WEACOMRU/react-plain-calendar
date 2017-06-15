@@ -1,0 +1,40 @@
+.props {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.propsName {
+  margin: 0 0 10px;
+  width: 150px;
+  font-weight: bold;
+}
+
+.propsDesc {
+  margin: 0 0 15px;
+  width: calc(100% - 150px);
+}
+
+.propsDefault {
+  color: #808080;
+}
+
+.subParams {
+  margin: 10px 0 0;
+}
+
+.subParamsName {
+  margin: 0 15px 0 0;
+  display: inline;
+  font-weight: bold;
+}
+
+.subParamsDesc {
+  margin: 0;
+  display: inline;
+}
+
+.subParamsDesc::after {
+  content: '';
+  margin-bottom: 10px;
+  display: block;
+}

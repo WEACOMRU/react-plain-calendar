@@ -22,19 +22,6 @@
   border-bottom: 1px solid #ccc;
 }
 
-.appHeader3 {
-
-}
-
-.appBadges {
-  margin-bottom: 20px;
-  text-align: center;
-}
-
-.appBadge {
-  margin: 0 2px;
-}
-
 .appCalendar {
   margin: 0 auto 15px;
 }
@@ -51,62 +38,4 @@
   font-weight: normal;
   font-size: 1rem;
   border-bottom: 1px solid #ccc;
-}
-
-.appCode {
-  padding: 1px 2px;
-  display: inline-block;
-  font-size: 14px;
-  background-color: #f0f0f0;
-}
-
-.appProps {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.appPropsName {
-  margin: 0 0 10px;
-  width: 150px;
-  font-weight: bold;
-}
-
-.appPropsDesc {
-  margin: 0 0 15px;
-  width: calc(100% - 150px);
-}
-
-.appPropsDefault {
-  color: #808080;
-}
-
-.appSubParams {
-  margin: 10px 0 0;
-}
-
-.appSubParamsName {
-  margin: 0 15px 0 0;
-  display: inline;
-  font-weight: bold;
-}
-
-.appSubParamsDesc {
-  margin: 0;
-  display: inline;
-}
-
-.appSubParamsDesc::after {
-  content: '';
-  margin-bottom: 10px;
-  display: block;
-}
-
-.appChangelogList {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.appChangelogItem {
-  margin-bottom: 10px;
 }
