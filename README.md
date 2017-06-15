@@ -115,7 +115,7 @@ $ npm run fix
 Please, create issues and pull requests.
 
 ## Todo
-- [.] Write documentation.
+- [x] Write documentation.
 - [ ] Write tests.
 - [ ] Add stylelint check.
 
