@@ -3,7 +3,6 @@ const webpack = require('webpack')
 const merge = require('webpack-merge')
 const CopyPlugin = require('copy-webpack-plugin')
 
-const libDir = resolve(__dirname, 'lib')
 const docsDir = resolve(__dirname, 'docs')
 const docsDistDir = resolve(__dirname, 'docs-dist')
 
