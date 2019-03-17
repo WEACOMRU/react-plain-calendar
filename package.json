@@ -4,13 +4,14 @@
   "description": "React Calendar Component",
   "main": "index.js",
   "scripts": {
-    "build": "npm run clean && npm run build:lib",
+    "build": "npm run build:clean && npm run build:lib",
     "build:lib": "BABEL_ENV=production babel src -d lib --ignore test.js",
-    "clean": "rimraf lib",
+    "build:clean": "rimraf lib",
     "fix": "standard --fix",
     "start": "webpack-dev-server",
     "test": "standard",
-    "version": "npm run build"
+    "version": "npm run build",
+    "build-docs": "rimraf docs-dist && NODE_ENV=production BABEL_ENV=development webpack"
   },
   "repository": {
     "type": "git",
@@ -38,6 +39,7 @@
     "babel-preset-env": "^1.2.2",
     "babel-preset-react": "^6.23.0",
     "babel-preset-stage-0": "^6.24.1",
+    "copy-webpack-plugin": "^4.6.0",
     "css-loader": "^0.28.3",
     "node-sass": "^4.5.0",
     "postcss-loader": "^2.0.5",
@@ -51,7 +53,8 @@
     "standard": "^10.0.2",
     "style-loader": "^0.18.1",
     "webpack": "^2.2.1",
-    "webpack-dev-server": "^2.4.5"
+    "webpack-dev-server": "^2.4.5",
+    "webpack-merge": "^4.2.1"
   },
   "dependencies": {
     "lodash.capitalize": "^4.2.1",
